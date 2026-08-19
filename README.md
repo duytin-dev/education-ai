@@ -4,10 +4,10 @@ Service gia sư: giải thích bài học, sinh trắc nghiệm, chấm bài. Fa
 
 Repo này **chỉ là AI**. Spring Boot gọi HTTP vào đây. Frontend **không** gọi thẳng service này.
 
-| Service | Cổng |
-|---------|------|
-| AI (repo này) | 8000 |
-| Backend Spring | 8080 |
+| Service          | Cổng |
+| ---------------- | ---- |
+| AI (repo này)    | 8000 |
+| Backend Spring   | 8080 |
 | Frontend Next.js | 3000 |
 
 ## Stack
@@ -32,12 +32,12 @@ education-ai/
 
 ## API
 
-| Method | Path | Body chính | Trả về |
-|--------|------|------------|--------|
-| GET | `/health` | — | `{ "status": "ok" }` |
-| POST | `/explain` | `course_title`, `lesson_*`, `question` | `{ "answer": "..." }` |
-| POST | `/quiz` | ngữ cảnh + `count` (3–10) | `{ "questions": [...] }` |
-| POST | `/grade` | `questions` + `answers` | điểm, feedback |
+| Method | Path       | Body chính                             | Trả về                   |
+| ------ | ---------- | -------------------------------------- | ------------------------ |
+| GET    | `/health`  | —                                      | `{ "status": "ok" }`     |
+| POST   | `/explain` | `course_title`, `lesson_*`, `question` | `{ "answer": "..." }`    |
+| POST   | `/quiz`    | ngữ cảnh + `count` (3–10)              | `{ "questions": [...] }` |
+| POST   | `/grade`   | `questions` + `answers`                | điểm, feedback           |
 
 Hết hạn mức Gemini → HTTP **429**, `detail`: `Bạn đã hết quota. Vui lòng thử lại sau.`
 
